@@ -1,1 +1,40 @@
-{     "devDependencies": {         "slack-pokemon-emoji": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-slack-pokemon-emoji",     "homepage": "https://github.com/npmtest/node-npmtest-slack-pokemon-emoji",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-slack-pokemon-emoji.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [slack-pokemon-emoji (v1.0.0)](https://github.com/fraserxu/slack-pokemon-emoji)  [![npm package](https://img.shields.io/npm/v/npmtest-slack-pokemon-emoji.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-slack-pokemon-emoji) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-slack-pokemon-emoji.svg)](https://travis-ci.org/npmtest/node-npmtest-slack-pokemon-emoji)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "slack-pokemon-emoji": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-slack-pokemon-emoji",
+    "keywords": [
+        "coverage",
+        "test",
+        "slack-pokemon-emoji"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_slack_pokemon_emoji.js",
+    "name": "npmtest-slack-pokemon-emoji",
+    "nameAlias": "npmtest_slack_pokemon_emoji",
+    "nameOriginal": "npmtest-slack-pokemon-emoji",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-slack-pokemon-emoji.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
